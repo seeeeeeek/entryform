@@ -873,46 +873,14 @@
       <div class="card-label">Preferensi Destinasi</div>
       <p style="font-size:13px;color:var(--mid);margin-bottom:12px;">Urutkan dari yang paling Anda sukai dengan drag & drop 👇</p>
       <div id="rank-list">
-        <div class="rank-item" draggable="true" data-value="Kuliner">
-          <div class="rank-num">1</div>
-          <div class="rank-label">🍜 Kuliner</div>
-          <div class="drag-handle">⠿</div>
-        </div>
-        <div class="rank-item" draggable="true" data-value="Landmark">
-          <div class="rank-num">2</div>
-          <div class="rank-label">🏯 Landmark</div>
-          <div class="drag-handle">⠿</div>
-        </div>
-        <div class="rank-item" draggable="true" data-value="Alam">
-          <div class="rank-num">3</div>
-          <div class="rank-label">🌿 Alam & Pemandangan</div>
-          <div class="drag-handle">⠿</div>
-        </div>
-        <div class="rank-item" draggable="true" data-value="Belanja">
-          <div class="rank-num">4</div>
-          <div class="rank-label">🛍️ Belanja</div>
-          <div class="drag-handle">⠿</div>
-        </div>
-        <div class="rank-item" draggable="true" data-value="Arsitektur">
-          <div class="rank-num">5</div>
-          <div class="rank-label">🏛️ Arsitektur</div>
-          <div class="drag-handle">⠿</div>
-        </div>
-        <div class="rank-item" draggable="true" data-value="Hidden Gem">
-          <div class="rank-num">6</div>
-          <div class="rank-label">💎 Hidden Gem</div>
-          <div class="drag-handle">⠿</div>
-        </div>
-        <div class="rank-item" draggable="true" data-value="Kota Tua">
-          <div class="rank-num">7</div>
-          <div class="rank-label">🏘️ Kota Tua / Old Town</div>
-          <div class="drag-handle">⠿</div>
-        </div>
-        <div class="rank-item" draggable="true" data-value="Bangunan Bersejarah">
-          <div class="rank-num">8</div>
-          <div class="rank-label">⛩️ Bangunan Bersejarah</div>
-          <div class="drag-handle">⠿</div>
-        </div>
+        <div class="rank-row"><div class="rank-label">🍜 Kuliner</div><select class="rank-select" data-cat="Kuliner" onchange="onRankChange(this)"><option value="">—</option></select></div>
+        <div class="rank-row"><div class="rank-label">🏯 Landmark</div><select class="rank-select" data-cat="Landmark" onchange="onRankChange(this)"><option value="">—</option></select></div>
+        <div class="rank-row"><div class="rank-label">🌿 Alam & Pemandangan</div><select class="rank-select" data-cat="Alam" onchange="onRankChange(this)"><option value="">—</option></select></div>
+        <div class="rank-row"><div class="rank-label">🛍️ Belanja</div><select class="rank-select" data-cat="Belanja" onchange="onRankChange(this)"><option value="">—</option></select></div>
+        <div class="rank-row"><div class="rank-label">🏛️ Arsitektur</div><select class="rank-select" data-cat="Arsitektur" onchange="onRankChange(this)"><option value="">—</option></select></div>
+        <div class="rank-row"><div class="rank-label">💎 Hidden Gem</div><select class="rank-select" data-cat="Hidden Gem" onchange="onRankChange(this)"><option value="">—</option></select></div>
+        <div class="rank-row"><div class="rank-label">🏘️ Kota Tua / Old Town</div><select class="rank-select" data-cat="Kota Tua" onchange="onRankChange(this)"><option value="">—</option></select></div>
+        <div class="rank-row"><div class="rank-label">⛩️ Bangunan Bersejarah</div><select class="rank-select" data-cat="Bangunan Bersejarah" onchange="onRankChange(this)"><option value="">—</option></select></div>
       </div>
     </div>
 
@@ -976,13 +944,17 @@ window.onload = function() {
   document.getElementById('field-name').value = clientName || 'Unknown Client';
   document.getElementById('client-name-display').textContent = clientName || 'Guest';
   document.getElementById('client-avatar').textContent = clientName ? clientName[0].toUpperCase() : '?';
-  document.getElementById('booking-ref-display').textContent = bookingRef || '—';
 
   // Build hotel sections
   buildHotelSections();
 
-  // Init drag-to-rank
+  // Init rank dropdowns
   initDragRank();
+
+  // Set min date to today for flight date fields
+  var today = new Date().toISOString().split('T')[0];
+  document.getElementById('field-arrival-date').min = today;
+  document.getElementById('field-departure-date').min = today;
 };
 
 // ─── HOTEL SECTIONS ───────────────────────────────────────────────────────────
@@ -1057,43 +1029,46 @@ function removeHotelEntry(cityIdx, entryIdx) {
   if (el) el.remove();
 }
 
-// ─── DRAG RANK ────────────────────────────────────────────────────────────────
+// ─── RANK DROPDOWNS ───────────────────────────────────────────────────────────
 function initDragRank() {
-  const list = document.getElementById('rank-list');
-  let dragged = null;
+  // populate all dropdowns with options 1-8
+  populateRankDropdowns();
+}
 
-  list.querySelectorAll('.rank-item').forEach(item => {
-    item.addEventListener('dragstart', e => {
-      dragged = item;
-      item.classList.add('dragging');
-    });
-    item.addEventListener('dragend', () => {
-      item.classList.remove('dragging');
-      updateRankNumbers();
-    });
-    item.addEventListener('dragover', e => {
-      e.preventDefault();
-      const rect = item.getBoundingClientRect();
-      const mid = rect.top + rect.height / 2;
-      if (e.clientY < mid) {
-        list.insertBefore(dragged, item);
-      } else {
-        list.insertBefore(dragged, item.nextSibling);
-      }
-    });
+function populateRankDropdowns() {
+  const selects = document.querySelectorAll('.rank-select');
+  const total = selects.length;
+  selects.forEach(function(sel) {
+    const currentVal = sel.value;
+    sel.innerHTML = '<option value="">—</option>';
+    for (var i = 1; i <= total; i++) {
+      sel.innerHTML += '<option value="' + i + '">' + i + '</option>';
+    }
+    if (currentVal) sel.value = currentVal;
   });
 }
 
-function updateRankNumbers() {
-  document.querySelectorAll('#rank-list .rank-item').forEach((item, i) => {
-    item.querySelector('.rank-num').textContent = i + 1;
+function onRankChange(changedSel) {
+  const val = changedSel.value;
+  if (!val) return;
+
+  // Remove this number from all OTHER selects that have it selected
+  document.querySelectorAll('.rank-select').forEach(function(sel) {
+    if (sel !== changedSel && sel.value === val) {
+      sel.value = '';
+    }
   });
 }
 
 function getRankedPrefs() {
-  return Array.from(document.querySelectorAll('#rank-list .rank-item'))
-    .map((item, i) => `${i + 1}. ${item.dataset.value}`)
-    .join(', ');
+  const results = {};
+  document.querySelectorAll('.rank-select').forEach(function(sel) {
+    if (sel.value) {
+      results[parseInt(sel.value)] = sel.dataset.cat;
+    }
+  });
+  const sorted = Object.keys(results).sort(function(a,b){ return a-b; });
+  return sorted.map(function(n) { return n + '. ' + results[n]; }).join(', ') || 'Tidak diisi';
 }
 
 // ─── STEPS ────────────────────────────────────────────────────────────────────
