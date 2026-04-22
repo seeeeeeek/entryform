@@ -31,10 +31,9 @@
     min-height: 100vh;
   }
 
-  /* HERO HEADER */
   .hero {
     background: var(--red);
-    background-image: 
+    background-image:
       radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.15) 0%, transparent 60%),
       radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 50%);
     padding: 48px 40px 40px;
@@ -42,9 +41,6 @@
     overflow: hidden;
   }
 
-  .hero::before {
-    content: '';
-  }
   .hero-watermark {
     position: absolute;
     right: 20px;
@@ -73,10 +69,7 @@
     margin-bottom: 10px;
   }
 
-  .hero-title em {
-    color: var(--gold);
-    font-style: italic;
-  }
+  .hero-title em { color: var(--gold); font-style: italic; }
 
   .hero-sub {
     font-size: 14px;
@@ -86,7 +79,6 @@
     font-weight: 300;
   }
 
-  /* CLIENT BANNER */
   .client-banner {
     background: white;
     border-bottom: 3px solid var(--gold);
@@ -98,229 +90,79 @@
   }
 
   .client-avatar {
-    width: 42px;
-    height: 42px;
+    width: 42px; height: 42px;
     background: var(--red);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    color: white;
-    flex-shrink: 0;
+    font-size: 18px; color: white; flex-shrink: 0;
   }
 
-  .client-info-label {
-    font-size: 11px;
-    color: var(--mid);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
+  .client-info-label { font-size: 11px; color: var(--mid); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+  .client-name-display { font-size: 17px; font-weight: 600; color: var(--dark); }
 
-  .client-name-display {
-    font-size: 17px;
-    font-weight: 600;
-    color: var(--dark);
-  }
+  .container { max-width: 680px; margin: 0 auto; padding: 36px 24px 80px; }
 
-  .booking-ref {
-    margin-left: auto;
-    text-align: right;
-  }
-
-  .booking-ref-label {
-    font-size: 10px;
-    color: var(--mid);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .booking-ref-value {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--red);
-    font-family: 'Playfair Display', serif;
-  }
-
-  /* MAIN CONTAINER */
-  .container {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 36px 24px 80px;
-  }
-
-  /* PROGRESS */
-  .progress-bar {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    margin-bottom: 36px;
-  }
+  .progress-bar { display: flex; align-items: center; margin-bottom: 36px; }
 
   .progress-step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    position: relative;
-    cursor: pointer;
+    display: flex; flex-direction: column; align-items: center;
+    flex: 1; position: relative; cursor: pointer;
   }
 
   .progress-step::before {
-    content: '';
-    position: absolute;
-    top: 16px;
-    left: 50%;
-    width: 100%;
-    height: 2px;
-    background: var(--light);
-    z-index: 0;
+    content: ''; position: absolute; top: 16px; left: 50%;
+    width: 100%; height: 2px; background: var(--light); z-index: 0;
   }
 
   .progress-step:last-child::before { display: none; }
 
   .step-circle {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: var(--light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--mid);
-    position: relative;
-    z-index: 1;
-    transition: all 0.3s;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--light); display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 600; color: var(--mid);
+    position: relative; z-index: 1; transition: all 0.3s;
     border: 2px solid var(--light);
   }
 
-  .progress-step.active .step-circle {
-    background: var(--red);
-    color: white;
-    border-color: var(--red);
-    box-shadow: 0 0 0 4px var(--red-light);
-  }
+  .progress-step.active .step-circle { background: var(--red); color: white; border-color: var(--red); box-shadow: 0 0 0 4px var(--red-light); }
+  .progress-step.completed .step-circle { background: var(--success); color: white; border-color: var(--success); }
 
-  .progress-step.completed .step-circle {
-    background: var(--success);
-    color: white;
-    border-color: var(--success);
-  }
-
-  .step-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--mid);
-    margin-top: 6px;
-    text-align: center;
-  }
-
+  .step-label { font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mid); margin-top: 6px; text-align: center; }
   .progress-step.active .step-label { color: var(--red); }
 
-  /* SECTIONS */
-  .form-section {
-    display: none;
-    animation: fadeIn 0.3s ease;
-  }
-
+  .form-section { display: none; animation: fadeIn 0.3s ease; }
   .form-section.active { display: block; }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-  .section-header {
-    margin-bottom: 24px;
-  }
+  .section-header { margin-bottom: 24px; }
+  .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--dark); line-height: 1.2; }
+  .section-desc { font-size: 13px; color: var(--mid); margin-top: 8px; line-height: 1.6; font-weight: 300; }
 
-  .section-eyebrow {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 6px;
-  }
-
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    color: var(--dark);
-    line-height: 1.2;
-  }
-
-  .section-desc {
-    font-size: 13px;
-    color: var(--mid);
-    margin-top: 8px;
-    line-height: 1.6;
-    font-weight: 300;
-  }
-
-  /* CARDS */
   .card {
-    background: white;
-    border-radius: var(--radius);
-    border: 1px solid var(--light);
-    padding: 24px;
-    margin-bottom: 16px;
-    box-shadow: var(--shadow);
-    transition: border-color 0.2s;
+    background: white; border-radius: var(--radius);
+    border: 1px solid var(--light); padding: 24px;
+    margin-bottom: 16px; box-shadow: var(--shadow); transition: border-color 0.2s;
   }
 
-  .card:focus-within {
-    border-color: var(--red);
-  }
+  .card:focus-within { border-color: var(--red); }
 
   .card-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--red); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px;
   }
 
-  .card-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--light);
-  }
+  .card-label::after { content: ''; flex: 1; height: 1px; background: var(--light); }
 
-  /* FORM ELEMENTS */
-  label.field-label {
-    display: block;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--mid);
-    margin-bottom: 6px;
-    margin-top: 16px;
-  }
-
+  label.field-label { display: block; font-size: 13px; font-weight: 500; color: var(--mid); margin-bottom: 6px; margin-top: 16px; }
   label.field-label:first-of-type { margin-top: 0; }
+  .required::after { content: ' *'; color: var(--red); }
 
-  .required::after {
-    content: ' *';
-    color: var(--red);
-  }
-
-  input[type="text"],
-  input[type="tel"],
-  input[type="date"],
-  input[type="time"],
-  textarea,
-  select {
+  input[type="text"], input[type="tel"], input[type="date"], input[type="number"],
+  textarea, select {
     width: 100%;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
@@ -334,334 +176,116 @@
   }
 
   input:focus, textarea:focus, select:focus {
-    border-color: var(--red);
-    background: white;
-    box-shadow: 0 0 0 3px var(--red-light);
+    border-color: var(--red); background: white; box-shadow: 0 0 0 3px var(--red-light);
   }
 
-  input[readonly] {
-    background: #f5f0eb;
-    color: var(--mid);
-    cursor: not-allowed;
-  }
+  input.error-field { border-color: #e74c3c !important; background: #fff5f5 !important; }
+  .field-error { font-size: 11px; color: #e74c3c; margin-top: 4px; display: none; }
+  .field-error.visible { display: block; }
 
+  input[readonly] { background: #f5f0eb; color: var(--mid); cursor: not-allowed; }
   textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
 
-  .two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .hint { font-size: 11px; color: #aaa; margin-top: 4px; font-style: italic; }
+
+  /* PAX SELECTOR */
+  .pax-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--light); }
+  .pax-row:last-of-type { border-bottom: none; }
+  .pax-type { font-size: 14px; font-weight: 500; }
+  .pax-type-sub { font-size: 11px; color: var(--mid); margin-top: 2px; }
+  .pax-counter { display: flex; align-items: center; gap: 12px; }
+  .pax-btn {
+    width: 32px; height: 32px; border-radius: 50%;
+    border: 1.5px solid var(--light); background: white;
+    font-size: 18px; cursor: pointer; display: flex;
+    align-items: center; justify-content: center;
+    color: var(--mid); transition: all 0.15s; line-height: 1;
   }
+  .pax-btn:hover { border-color: var(--red); color: var(--red); }
+  .pax-count { font-size: 16px; font-weight: 600; min-width: 24px; text-align: center; }
 
-  .hint {
-    font-size: 11px;
-    color: #aaa;
-    margin-top: 4px;
-    font-style: italic;
-  }
+  .age-inputs { margin-top: 12px; display: none; }
+  .age-inputs.visible { display: block; }
+  .age-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; margin-top: 8px; }
+  .age-input-wrap label { font-size: 11px; color: var(--mid); margin-bottom: 4px; margin-top: 0; }
+  .age-input-wrap input { padding: 8px 10px; font-size: 13px; }
 
-  /* CITY HOTEL CARD */
-  .city-hotel-card {
-    background: white;
-    border-radius: var(--radius);
-    border: 1px solid var(--light);
-    overflow: hidden;
-    margin-bottom: 16px;
-    box-shadow: var(--shadow);
-  }
-
-  .city-hotel-header {
-    background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
-    padding: 14px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .city-hotel-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    color: white;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .city-hotel-name svg { opacity: 0.8; }
-
+  /* CITY HOTEL */
+  .city-hotel-card { background: white; border-radius: var(--radius); border: 1px solid var(--light); overflow: hidden; margin-bottom: 16px; box-shadow: var(--shadow); }
+  .city-hotel-header { background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%); padding: 14px 20px; }
+  .city-hotel-name { font-family: 'Playfair Display', serif; font-size: 17px; color: white; display: flex; align-items: center; gap: 10px; }
   .city-hotel-body { padding: 20px; }
-
-  .hotel-entry {
-    border: 1px solid var(--light);
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 12px;
-    background: var(--cream);
-    position: relative;
-  }
-
-  .hotel-entry-num {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 10px;
-  }
-
-  .remove-hotel {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: none;
-    border: none;
-    color: #ccc;
-    cursor: pointer;
-    font-size: 18px;
-    line-height: 1;
-    padding: 2px 6px;
-    border-radius: 4px;
-    transition: all 0.15s;
-  }
-
+  .hotel-entry { border: 1px solid var(--light); border-radius: 8px; padding: 16px; margin-bottom: 12px; background: var(--cream); position: relative; }
+  .hotel-entry-num { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .remove-hotel { position: absolute; top: 12px; right: 12px; background: none; border: none; color: #ccc; cursor: pointer; font-size: 18px; padding: 2px 6px; border-radius: 4px; transition: all 0.15s; }
   .remove-hotel:hover { color: var(--red); background: var(--red-light); }
+  .add-hotel-btn { display: flex; align-items: center; gap: 8px; background: none; border: 1px dashed var(--light); border-radius: 8px; padding: 10px 16px; font-family: 'Montserrat', sans-serif; font-size: 13px; color: var(--mid); cursor: pointer; width: 100%; transition: all 0.15s; margin-top: 4px; }
+  .add-hotel-btn:hover { border-color: var(--red); color: var(--red); background: var(--red-light); }
 
-  .add-hotel-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: none;
-    border: 1px dashed var(--light);
-    border-radius: 8px;
-    padding: 10px 16px;
+  /* DESTINATION TIERS */
+  .dest-grid { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+  .dest-row { display: flex; align-items: center; gap: 10px; background: white; border: 1px solid var(--light); border-radius: 10px; padding: 12px 14px; }
+  .dest-name { font-size: 14px; flex: 1; }
+  .tier-btns { display: flex; gap: 6px; flex-shrink: 0; }
+  .tier-btn {
+    border: 1.5px solid var(--light); background: white;
+    border-radius: 20px; padding: 5px 10px;
+    font-size: 12px; cursor: pointer;
+    transition: all 0.15s; white-space: nowrap;
     font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    color: var(--mid);
-    cursor: pointer;
-    width: 100%;
-    transition: all 0.15s;
-    margin-top: 4px;
   }
+  .tier-btn:hover { border-color: var(--red); }
+  .tier-btn.selected-must { background: #fff3cd; border-color: #f0a500; color: #7a5200; font-weight: 600; }
+  .tier-btn.selected-nice { background: #d4edda; border-color: #28a745; color: #155724; font-weight: 600; }
+  .tier-btn.selected-no { background: #f8d7da; border-color: #dc3545; color: #721c24; font-weight: 600; }
 
-  .add-hotel-btn:hover {
-    border-color: var(--red);
-    color: var(--red);
-    background: var(--red-light);
-  }
-
-  /* PREFERENCES */
-  .pref-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 8px;
-    margin-top: 8px;
-  }
-
-  .pref-chip {
-    position: relative;
-  }
-
+  /* FOOD PREFS */
+  .pref-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; margin-top: 8px; }
+  .pref-chip { position: relative; }
   .pref-chip input { display: none; }
+  .pref-chip label { display: flex; align-items: center; gap: 8px; background: var(--cream); border: 1px solid var(--light); border-radius: 8px; padding: 10px 14px; cursor: pointer; font-size: 13px; font-weight: 400; color: var(--dark); transition: all 0.15s; margin: 0; }
+  .pref-chip input:checked + label { background: var(--red-light); border-color: var(--red); color: var(--red-dark); font-weight: 500; }
+  .chip-icon { font-size: 16px; }
 
-  .pref-chip label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--cream);
-    border: 1px solid var(--light);
-    border-radius: 8px;
-    padding: 10px 14px;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--dark);
-    transition: all 0.15s;
-    margin: 0;
-  }
-
-  .pref-chip input:checked + label {
-    background: var(--red-light);
-    border-color: var(--red);
-    color: var(--red-dark);
-    font-weight: 500;
-  }
-
-  .pref-chip label .chip-icon { font-size: 16px; }
-
-  /* RANKING */
-  .rank-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: white;
-    border: 1px solid var(--light);
-    border-radius: 8px;
-    padding: 12px 16px;
-    margin-bottom: 8px;
-    cursor: grab;
-    transition: all 0.15s;
-    user-select: none;
-  }
-
-  .rank-item:hover { border-color: var(--red); box-shadow: 0 2px 8px rgba(192,57,43,0.1); }
-  .rank-item.dragging { opacity: 0.5; }
-
-  .rank-num {
-    width: 24px;
-    height: 24px;
-    background: var(--red);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 600;
-    flex-shrink: 0;
-  }
-
-  .rank-label { font-size: 14px; flex: 1; }
-
-  .drag-handle {
-    color: var(--light);
-    font-size: 18px;
-    cursor: grab;
-  }
-
-  /* PACE SELECTOR */
-  .pace-options {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-top: 8px;
-  }
-
+  /* PACE */
+  .pace-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 8px; }
   .pace-option { position: relative; }
   .pace-option input { display: none; }
-
-  .pace-option label {
-    display: block;
-    text-align: center;
-    border: 2px solid var(--light);
-    border-radius: 10px;
-    padding: 14px 10px;
-    cursor: pointer;
-    transition: all 0.2s;
-    margin: 0;
-  }
-
-  .pace-option input:checked + label {
-    border-color: var(--red);
-    background: var(--red-light);
-  }
-
+  .pace-option label { display: block; text-align: center; border: 2px solid var(--light); border-radius: 10px; padding: 14px 10px; cursor: pointer; transition: all 0.2s; margin: 0; }
+  .pace-option input:checked + label { border-color: var(--red); background: var(--red-light); }
   .pace-icon { font-size: 24px; display: block; margin-bottom: 6px; }
   .pace-name { font-size: 13px; font-weight: 600; color: var(--dark); display: block; }
   .pace-desc { font-size: 11px; color: var(--mid); display: block; margin-top: 3px; }
 
-  /* NAVIGATION */
-  .form-nav {
-    display: flex;
-    gap: 12px;
-    margin-top: 28px;
-  }
-
-  .btn-back {
-    flex: 0 0 auto;
-    background: white;
-    color: var(--mid);
-    border: 1px solid var(--light);
-    border-radius: var(--radius);
-    padding: 14px 24px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-
+  /* NAV */
+  .form-nav { display: flex; gap: 12px; margin-top: 28px; }
+  .btn-back { flex: 0 0 auto; background: white; color: var(--mid); border: 1px solid var(--light); border-radius: var(--radius); padding: 14px 24px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
   .btn-back:hover { border-color: var(--mid); color: var(--dark); }
-
-  .btn-next {
-    flex: 1;
-    background: var(--red);
-    color: white;
-    border: none;
-    border-radius: var(--radius);
-    padding: 14px 24px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    letter-spacing: 0.02em;
-  }
-
+  .btn-next { flex: 1; background: var(--red); color: white; border: none; border-radius: var(--radius); padding: 14px 24px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; letter-spacing: 0.02em; }
   .btn-next:hover { background: var(--red-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(192,57,43,0.3); }
 
-  /* SUCCESS STATE */
-  .success-screen {
-    display: none;
-    text-align: center;
-    padding: 60px 20px;
-  }
+  .success-screen { display: none; text-align: center; padding: 60px 20px; }
+  .success-icon { width: 80px; height: 80px; background: var(--success); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 36px; }
+  .success-title { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--dark); margin-bottom: 12px; }
+  .success-desc { font-size: 14px; color: var(--mid); line-height: 1.7; max-width: 400px; margin: 0 auto; }
 
-  .success-icon {
-    width: 80px;
-    height: 80px;
-    background: var(--success);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 24px;
-    font-size: 36px;
-  }
-
-  .success-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    color: var(--dark);
-    margin-bottom: 12px;
-  }
-
-  .success-desc {
-    font-size: 14px;
-    color: var(--mid);
-    line-height: 1.7;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
-  .error-banner {
-    display: none;
-    background: var(--red-light);
-    border: 1px solid #f1948a;
-    border-radius: 8px;
-    padding: 12px 16px;
-    font-size: 13px;
-    color: var(--red-dark);
-    margin-bottom: 16px;
-  }
+  .error-banner { display: none; background: var(--red-light); border: 1px solid #f1948a; border-radius: 8px; padding: 12px 16px; font-size: 13px; color: var(--red-dark); margin-bottom: 16px; }
 
   @media (max-width: 600px) {
     .hero { padding: 32px 20px 28px; }
-    .client-banner { padding: 14px 20px; flex-wrap: wrap; }
-    .booking-ref { margin-left: 0; }
+    .client-banner { padding: 14px 20px; }
     .container { padding: 24px 16px 60px; }
     .two-col { grid-template-columns: 1fr; }
     .pace-options { grid-template-columns: 1fr; }
     .hero-title { font-size: 26px; }
+    .tier-btns { flex-direction: column; gap: 4px; }
+    .tier-btn { font-size: 11px; padding: 4px 8px; }
   }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
 <div class="hero">
   <svg class="hero-watermark" xmlns="http://www.w3.org/2000/svg" viewBox="156 448 745 200">
     <path fill="white" d="M156.04,496.51l24.74,46.73c0,0,4.4,12.1,19.79,4.4c15.39-7.7,18.69-9.9,27.49-7.7c8.8,2.2,64.88,23.09,64.88,23.09s13.2,4.4,14.29,14.29c1.1,9.9,0,9.9,0,9.9h-69.27c0,0-39.59-3.3-48.38,18.69l-0.92,27.92c0,0-2.37,11.67,10.82,11.67s157.24,0,157.24,0s20.89,2.2,20.89-23.09s0-64.88,0-64.88s0-17.59-26.39-21.99s-73.67-19.79-73.67-19.79l92.37-42.88c0,0,24.19-14.29,0-20.89c0,0-15.39-1.1-21.99-2.2c-6.6-1.1-28.59-3.3-41.78,1.1c-13.2,4.4-82.47,40.68-82.47,40.68s-9.9,12.1-41.78-4.4C149.99,470.67,156.04,496.51,156.04,496.51z"/>
@@ -674,47 +298,29 @@
   <div class="hero-sub">Lengkapi form berikut agar kami dapat mempersiapkan itinerary terbaik yang disesuaikan dengan kebutuhan Anda. 😊</div>
 </div>
 
-<!-- CLIENT BANNER -->
-<div class="client-banner" id="client-banner">
+<div class="client-banner">
   <div class="client-avatar" id="client-avatar">?</div>
   <div>
     <div class="client-info-label">Halo, selamat datang!</div>
     <div class="client-name-display" id="client-name-display">Loading...</div>
   </div>
-
 </div>
 
-<!-- MAIN -->
 <div class="container">
-
-  <!-- PROGRESS -->
   <div class="progress-bar">
-    <div class="progress-step active" onclick="goToStep(1)">
-      <div class="step-circle">1</div>
-      <div class="step-label">Data Diri</div>
-    </div>
-    <div class="progress-step" onclick="goToStep(2)">
-      <div class="step-circle">2</div>
-      <div class="step-label">Perjalanan</div>
-    </div>
-    <div class="progress-step" onclick="goToStep(3)">
-      <div class="step-circle">3</div>
-      <div class="step-label">Hotel</div>
-    </div>
-    <div class="progress-step" onclick="goToStep(4)">
-      <div class="step-circle">4</div>
-      <div class="step-label">Preferensi</div>
-    </div>
+    <div class="progress-step active" onclick="goToStep(1)"><div class="step-circle">1</div><div class="step-label">Data Diri</div></div>
+    <div class="progress-step" onclick="goToStep(2)"><div class="step-circle">2</div><div class="step-label">Perjalanan</div></div>
+    <div class="progress-step" onclick="goToStep(3)"><div class="step-circle">3</div><div class="step-label">Hotel</div></div>
+    <div class="progress-step" onclick="goToStep(4)"><div class="step-circle">4</div><div class="step-label">Preferensi</div></div>
   </div>
 
   <div class="error-banner" id="error-banner"></div>
 
-  <!-- STEP 1: CLIENT DETAILS -->
+  <!-- STEP 1 -->
   <div class="form-section active" id="step-1">
     <div class="section-header">
       <div class="section-eyebrow">Step 1 of 4</div>
       <div class="section-title">Data Diri</div>
-      <div class="section-desc">Beberapa informasi sudah kami isi berdasarkan data booking Anda. Mohon lengkapi sisanya.</div>
     </div>
 
     <div class="card">
@@ -724,10 +330,60 @@
       <p class="hint">Diisi otomatis dari data booking Anda.</p>
 
       <label class="field-label required">Asal Kota di Indonesia</label>
-      <input type="text" id="field-city-origin" placeholder="e.g. Jakarta, Surabaya, Medan...">
+      <input type="text" id="field-city-origin" list="indonesia-cities" placeholder="Ketik nama kota..." autocomplete="off">
+      <datalist id="indonesia-cities">
+        <option value="Jakarta">
+        <option value="Surabaya">
+        <option value="Bandung">
+        <option value="Medan">
+        <option value="Semarang">
+        <option value="Makassar">
+        <option value="Palembang">
+        <option value="Tangerang">
+        <option value="Depok">
+        <option value="Bekasi">
+        <option value="Bogor">
+        <option value="Malang">
+        <option value="Yogyakarta">
+        <option value="Solo">
+        <option value="Denpasar">
+        <option value="Balikpapan">
+        <option value="Banjarmasin">
+        <option value="Pontianak">
+        <option value="Samarinda">
+        <option value="Pekanbaru">
+        <option value="Batam">
+        <option value="Padang">
+        <option value="Manado">
+        <option value="Ambon">
+        <option value="Jayapura">
+        <option value="Kupang">
+        <option value="Mataram">
+        <option value="Lombok">
+        <option value="Aceh">
+        <option value="Palu">
+        <option value="Kendari">
+        <option value="Gorontalo">
+        <option value="Ternate">
+        <option value="Sorong">
+        <option value="Merauke">
+        <option value="Cirebon">
+        <option value="Serang">
+        <option value="Tasikmalaya">
+        <option value="Sukabumi">
+        <option value="Purwokerto">
+        <option value="Kediri">
+        <option value="Madiun">
+        <option value="Jember">
+        <option value="Banyuwangi">
+        <option value="Bengkulu">
+        <option value="Jambi">
+        <option value="Lampung">
+      </datalist>
 
       <label class="field-label required">Nomor WhatsApp</label>
-      <input type="tel" id="field-whatsapp" placeholder="e.g. +62 812-3456-7890">
+      <input type="tel" id="field-whatsapp" placeholder="+62 812-3456-7890" oninput="formatWhatsapp(this)">
+      <p class="hint">Nomor aktif yang bisa dihubungi selama perjalanan.</p>
 
       <label class="field-label">WeChat ID (jika ada)</label>
       <input type="text" id="field-wechat" placeholder="WeChat username">
@@ -735,9 +391,53 @@
 
     <div class="card">
       <div class="card-label">Komposisi Peserta</div>
-      <label class="field-label required">Jumlah & Usia Peserta</label>
-      <input type="text" id="field-pax" placeholder="e.g. 3 adults, 1 child (8), 2 senior (65, 70)">
-      <p class="hint">Mohon cantumkan usia untuk anak-anak dan lansia.</p>
+      <p class="hint" style="margin-bottom:12px;">Minimal 1 dewasa diperlukan.</p>
+
+      <div class="pax-row">
+        <div>
+          <div class="pax-type">👨‍👩‍👧 Dewasa</div>
+          <div class="pax-type-sub">18 tahun ke atas</div>
+        </div>
+        <div class="pax-counter">
+          <button class="pax-btn" onclick="changePax('adult', -1)">−</button>
+          <span class="pax-count" id="adult-count">1</span>
+          <button class="pax-btn" onclick="changePax('adult', 1)">+</button>
+        </div>
+      </div>
+
+      <div class="pax-row">
+        <div>
+          <div class="pax-type">👴 Senior</div>
+          <div class="pax-type-sub">60 tahun ke atas</div>
+        </div>
+        <div class="pax-counter">
+          <button class="pax-btn" onclick="changePax('senior', -1)">−</button>
+          <span class="pax-count" id="senior-count">0</span>
+          <button class="pax-btn" onclick="changePax('senior', 1)">+</button>
+        </div>
+      </div>
+
+      <div class="age-inputs" id="senior-ages">
+        <label class="field-label">Usia masing-masing senior</label>
+        <div class="age-grid" id="senior-age-grid"></div>
+      </div>
+
+      <div class="pax-row">
+        <div>
+          <div class="pax-type">🧒 Anak-anak</div>
+          <div class="pax-type-sub">Di bawah 18 tahun</div>
+        </div>
+        <div class="pax-counter">
+          <button class="pax-btn" onclick="changePax('child', -1)">−</button>
+          <span class="pax-count" id="child-count">0</span>
+          <button class="pax-btn" onclick="changePax('child', 1)">+</button>
+        </div>
+      </div>
+
+      <div class="age-inputs" id="child-ages">
+        <label class="field-label">Usia masing-masing anak</label>
+        <div class="age-grid" id="child-age-grid"></div>
+      </div>
     </div>
 
     <div class="form-nav">
@@ -748,12 +448,11 @@
     </div>
   </div>
 
-  <!-- STEP 2: FLIGHT & TRANSPORT -->
+  <!-- STEP 2 -->
   <div class="form-section" id="step-2">
     <div class="section-header">
       <div class="section-eyebrow">Step 2 of 4</div>
       <div class="section-title">Detail Perjalanan</div>
-      <div class="section-desc">Informasi penerbangan dan transportasi domestik membantu kami menyiapkan penjemputan dan jadwal yang tepat.</div>
     </div>
 
     <div class="card">
@@ -761,7 +460,7 @@
       <div class="two-col">
         <div>
           <label class="field-label required">Tanggal Kedatangan</label>
-          <input type="date" id="field-arrival-date">
+          <input type="date" id="field-arrival-date" onchange="validateDates()">
         </div>
         <div>
           <label class="field-label required">Waktu Tiba</label>
@@ -769,7 +468,8 @@
         </div>
       </div>
       <label class="field-label required">Nomor Penerbangan</label>
-      <input type="text" id="field-arrival-flight" placeholder="e.g. CZ937">
+      <input type="text" id="field-arrival-flight" placeholder="e.g. CZ937" oninput="formatFlightNumber(this)" maxlength="8">
+      <div class="field-error" id="arrival-flight-error">Format harus 2 huruf diikuti angka (e.g. CZ937)</div>
       <label class="field-label required">Bandara Kedatangan</label>
       <input type="text" id="field-arrival-airport" placeholder="e.g. Beijing Capital International (PEK)">
     </div>
@@ -779,7 +479,8 @@
       <div class="two-col">
         <div>
           <label class="field-label required">Tanggal Kepulangan</label>
-          <input type="date" id="field-departure-date">
+          <input type="date" id="field-departure-date" onchange="validateDates()">
+          <div class="field-error" id="departure-date-error">Tanggal kepulangan harus setelah kedatangan</div>
         </div>
         <div>
           <label class="field-label required">Waktu Keberangkatan</label>
@@ -787,7 +488,8 @@
         </div>
       </div>
       <label class="field-label required">Nomor Penerbangan</label>
-      <input type="text" id="field-departure-flight" placeholder="e.g. CZ938">
+      <input type="text" id="field-departure-flight" placeholder="e.g. CZ938" oninput="formatFlightNumber(this)" maxlength="8">
+      <div class="field-error" id="departure-flight-error">Format harus 2 huruf diikuti angka (e.g. CZ938)</div>
       <label class="field-label required">Bandara Keberangkatan</label>
       <input type="text" id="field-departure-airport" placeholder="e.g. Shanghai Pudong Int'l (PVG)">
     </div>
@@ -795,7 +497,7 @@
     <div class="card">
       <div class="card-label">Transportasi Domestik Antar Kota</div>
       <label class="field-label">Detail Transportasi (jika ada)</label>
-      <textarea id="field-domestic-transport" placeholder="Contoh:&#10;Bullet Train Beijing → Shanghai: G105, 13 Apr 12:00–17:00&#10;Flight Chengdu → Beijing: CA1234, 15 Apr 09:30"></textarea>
+      <textarea id="field-domestic-transport" placeholder="Contoh:&#10;Bullet Train Beijing → Shanghai: G105, 13 Apr 12:00–17:00"></textarea>
       <p class="hint">Isi jika Anda sudah memiliki tiket transportasi antar kota.</p>
     </div>
 
@@ -808,7 +510,7 @@
     </div>
   </div>
 
-  <!-- STEP 3: HOTELS (dynamic per city) -->
+  <!-- STEP 3 -->
   <div class="form-section" id="step-3">
     <div class="section-header">
       <div class="section-eyebrow">Step 3 of 4</div>
@@ -827,60 +529,38 @@
     </div>
   </div>
 
-  <!-- STEP 4: PREFERENCES -->
+  <!-- STEP 4 -->
   <div class="form-section" id="step-4">
     <div class="section-header">
       <div class="section-eyebrow">Step 4 of 4</div>
       <div class="section-title">Preferensi & Kebutuhan</div>
-      <div class="section-desc">Bantu kami memahami gaya perjalanan Anda agar itinerary terasa benar-benar personal.</div>
     </div>
 
     <div class="card">
       <div class="card-label">Ekspektasi Perjalanan</div>
       <label class="field-label required">Ceritakan ekspektasi perjalanan Anda</label>
-      <textarea id="field-expectations" placeholder="e.g. Mau mengunjungi tempat-tempat destinasi favorit, mencoba kuliner khas masing-masing kota, dan diantar ke pusat perbelanjaan oleh-oleh." style="min-height:100px;"></textarea>
+      <textarea id="field-expectations" placeholder="e.g. Mau mengunjungi tempat-tempat destinasi favorit, mencoba kuliner khas, dan belanja oleh-oleh." style="min-height:100px;"></textarea>
 
-      <label class="field-label">Tempo Perjalanan</label>
+      <label class="field-label" style="margin-top:20px;">Tempo Perjalanan</label>
       <div class="pace-options">
-        <div class="pace-option">
-          <input type="radio" name="pace" id="pace-relaxed" value="Relaxed">
-          <label for="pace-relaxed">
-            <span class="pace-icon">🌿</span>
-            <span class="pace-name">Santai</span>
-            <span class="pace-desc">Start siang, tidak buru-buru</span>
-          </label>
-        </div>
-        <div class="pace-option">
-          <input type="radio" name="pace" id="pace-moderate" value="Moderate" checked>
-          <label for="pace-moderate">
-            <span class="pace-icon">☀️</span>
-            <span class="pace-name">Seimbang</span>
-            <span class="pace-desc">Aktif tapi tetap fleksibel</span>
-          </label>
-        </div>
-        <div class="pace-option">
-          <input type="radio" name="pace" id="pace-packed" value="Packed">
-          <label for="pace-packed">
-            <span class="pace-icon">⚡</span>
-            <span class="pace-name">Padat</span>
-            <span class="pace-desc">Maksimalkan setiap hari</span>
-          </label>
-        </div>
+        <div class="pace-option"><input type="radio" name="pace" id="pace-relaxed" value="Relaxed"><label for="pace-relaxed"><span class="pace-icon">🌿</span><span class="pace-name">Santai</span><span class="pace-desc">Start siang, tidak buru-buru</span></label></div>
+        <div class="pace-option"><input type="radio" name="pace" id="pace-moderate" value="Moderate" checked><label for="pace-moderate"><span class="pace-icon">☀️</span><span class="pace-name">Seimbang</span><span class="pace-desc">Aktif tapi fleksibel</span></label></div>
+        <div class="pace-option"><input type="radio" name="pace" id="pace-packed" value="Packed"><label for="pace-packed"><span class="pace-icon">⚡</span><span class="pace-name">Padat</span><span class="pace-desc">Maksimalkan setiap hari</span></label></div>
       </div>
     </div>
 
     <div class="card">
       <div class="card-label">Preferensi Destinasi</div>
-      <p style="font-size:13px;color:var(--mid);margin-bottom:12px;">Urutkan dari yang paling Anda sukai dengan drag & drop 👇</p>
-      <div id="rank-list">
-        <div class="rank-row"><div class="rank-label">🍜 Kuliner</div><select class="rank-select" data-cat="Kuliner" onchange="onRankChange(this)"><option value="">—</option></select></div>
-        <div class="rank-row"><div class="rank-label">🏯 Landmark</div><select class="rank-select" data-cat="Landmark" onchange="onRankChange(this)"><option value="">—</option></select></div>
-        <div class="rank-row"><div class="rank-label">🌿 Alam & Pemandangan</div><select class="rank-select" data-cat="Alam" onchange="onRankChange(this)"><option value="">—</option></select></div>
-        <div class="rank-row"><div class="rank-label">🛍️ Belanja</div><select class="rank-select" data-cat="Belanja" onchange="onRankChange(this)"><option value="">—</option></select></div>
-        <div class="rank-row"><div class="rank-label">🏛️ Arsitektur</div><select class="rank-select" data-cat="Arsitektur" onchange="onRankChange(this)"><option value="">—</option></select></div>
-        <div class="rank-row"><div class="rank-label">💎 Hidden Gem</div><select class="rank-select" data-cat="Hidden Gem" onchange="onRankChange(this)"><option value="">—</option></select></div>
-        <div class="rank-row"><div class="rank-label">🏘️ Kota Tua / Old Town</div><select class="rank-select" data-cat="Kota Tua" onchange="onRankChange(this)"><option value="">—</option></select></div>
-        <div class="rank-row"><div class="rank-label">⛩️ Bangunan Bersejarah</div><select class="rank-select" data-cat="Bangunan Bersejarah" onchange="onRankChange(this)"><option value="">—</option></select></div>
+      <p style="font-size:13px;color:var(--mid);margin-bottom:4px;">Pilih prioritas untuk setiap jenis destinasi:</p>
+      <div class="dest-grid">
+        <div class="dest-row" data-cat="Kuliner"><div class="dest-name">🍜 Kuliner</div><div class="tier-btns"><button class="tier-btn" data-tier="must" onclick="setTier(this)">⭐ Wajib</button><button class="tier-btn" data-tier="nice" onclick="setTier(this)">👍 Oke</button><button class="tier-btn" data-tier="no" onclick="setTier(this)">👎 Skip</button></div></div>
+        <div class="dest-row" data-cat="Landmark"><div class="dest-name">🏯 Landmark</div><div class="tier-btns"><button class="tier-btn" data-tier="must" onclick="setTier(this)">⭐ Wajib</button><button class="tier-btn" data-tier="nice" onclick="setTier(this)">👍 Oke</button><button class="tier-btn" data-tier="no" onclick="setTier(this)">👎 Skip</button></div></div>
+        <div class="dest-row" data-cat="Alam"><div class="dest-name">🌿 Alam & Pemandangan</div><div class="tier-btns"><button class="tier-btn" data-tier="must" onclick="setTier(this)">⭐ Wajib</button><button class="tier-btn" data-tier="nice" onclick="setTier(this)">👍 Oke</button><button class="tier-btn" data-tier="no" onclick="setTier(this)">👎 Skip</button></div></div>
+        <div class="dest-row" data-cat="Belanja"><div class="dest-name">🛍️ Belanja</div><div class="tier-btns"><button class="tier-btn" data-tier="must" onclick="setTier(this)">⭐ Wajib</button><button class="tier-btn" data-tier="nice" onclick="setTier(this)">👍 Oke</button><button class="tier-btn" data-tier="no" onclick="setTier(this)">👎 Skip</button></div></div>
+        <div class="dest-row" data-cat="Arsitektur"><div class="dest-name">🏛️ Arsitektur</div><div class="tier-btns"><button class="tier-btn" data-tier="must" onclick="setTier(this)">⭐ Wajib</button><button class="tier-btn" data-tier="nice" onclick="setTier(this)">👍 Oke</button><button class="tier-btn" data-tier="no" onclick="setTier(this)">👎 Skip</button></div></div>
+        <div class="dest-row" data-cat="Hidden Gem"><div class="dest-name">💎 Hidden Gem</div><div class="tier-btns"><button class="tier-btn" data-tier="must" onclick="setTier(this)">⭐ Wajib</button><button class="tier-btn" data-tier="nice" onclick="setTier(this)">👍 Oke</button><button class="tier-btn" data-tier="no" onclick="setTier(this)">👎 Skip</button></div></div>
+        <div class="dest-row" data-cat="Kota Tua"><div class="dest-name">🏘️ Kota Tua / Old Town</div><div class="tier-btns"><button class="tier-btn" data-tier="must" onclick="setTier(this)">⭐ Wajib</button><button class="tier-btn" data-tier="nice" onclick="setTier(this)">👍 Oke</button><button class="tier-btn" data-tier="no" onclick="setTier(this)">👎 Skip</button></div></div>
+        <div class="dest-row" data-cat="Sejarah"><div class="dest-name">⛩️ Bangunan Bersejarah</div><div class="tier-btns"><button class="tier-btn" data-tier="must" onclick="setTier(this)">⭐ Wajib</button><button class="tier-btn" data-tier="nice" onclick="setTier(this)">👍 Oke</button><button class="tier-btn" data-tier="no" onclick="setTier(this)">👎 Skip</button></div></div>
       </div>
     </div>
 
@@ -904,14 +584,12 @@
       <input type="text" id="field-medical" placeholder="e.g. Alergi kacang, diabetes, butuh kursi roda...">
 
       <label class="field-label">Permintaan tambahan</label>
-      <textarea id="field-requests" placeholder="e.g. Stroller, tidak mau bangun terlalu pagi, ada yang takut ketinggian..." style="min-height:70px;"></textarea>
+      <textarea id="field-requests" placeholder="e.g. Stroller, tidak mau bangun terlalu pagi..." style="min-height:70px;"></textarea>
     </div>
 
     <div class="form-nav">
       <button class="btn-back" onclick="prevStep(4)">← Kembali</button>
-      <button class="btn-next" onclick="submitForm()" id="submit-btn">
-        ✓ Kirim Form
-      </button>
+      <button class="btn-next" onclick="submitForm()" id="submit-btn">✓ Kirim Form</button>
     </div>
   </div>
 
@@ -924,269 +602,343 @@
       Jika ada pertanyaan, jangan ragu untuk menghubungi kami melalui WhatsApp group yang sudah dibuat. Sampai jumpa di China! 🇨🇳
     </div>
   </div>
-
 </div>
 
 <script>
-// ─── URL PARAMS ───────────────────────────────────────────────────────────────
+// ─── CONFIG ───────────────────────────────────────────────────
+const SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+
+// ─── URL PARAMS ───────────────────────────────────────────────
 const params = new URLSearchParams(window.location.search);
 const clientName = decodeURIComponent(params.get('name') || '');
-const bookingRef = params.get('ref') || '';
 const citiesRaw = decodeURIComponent(params.get('cities') || '');
-const cities = citiesRaw ? citiesRaw.split(',').map(c => c.trim()).filter(Boolean) : [];
+const cities = citiesRaw ? citiesRaw.split(',').map(function(c) { return c.trim(); }).filter(Boolean) : [];
 
-// SCRIPT URL: replace with your deployed Apps Script Web App URL
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx8UhrC0RzI_TNBPTAvxYQc7A9ZpNdyp4juv4CS4tvI1-sosRmZW8Ma_Al9J7gp140bjg/exec';
+// ─── PAX STATE ────────────────────────────────────────────────
+var pax = { adult: 1, senior: 0, child: 0 };
 
-// ─── INIT ─────────────────────────────────────────────────────────────────────
+// ─── INIT ─────────────────────────────────────────────────────
 window.onload = function() {
-  // Set client info
   document.getElementById('field-name').value = clientName || 'Unknown Client';
   document.getElementById('client-name-display').textContent = clientName || 'Guest';
   document.getElementById('client-avatar').textContent = clientName ? clientName[0].toUpperCase() : '?';
 
-  // Build hotel sections
+  // Set min dates to tomorrow
+  var tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  var tomorrowStr = tomorrow.toISOString().split('T')[0];
+  document.getElementById('field-arrival-date').min = tomorrowStr;
+  document.getElementById('field-departure-date').min = tomorrowStr;
+
   buildHotelSections();
-
-  // Init rank dropdowns
-  initDragRank();
-
-  // Set min date to today for flight date fields
-  var today = new Date().toISOString().split('T')[0];
-  document.getElementById('field-arrival-date').min = today;
-  document.getElementById('field-departure-date').min = today;
 };
 
-// ─── HOTEL SECTIONS ───────────────────────────────────────────────────────────
-function buildHotelSections() {
-  const container = document.getElementById('city-hotels-container');
-  container.innerHTML = '';
+// ─── PAX COUNTER ──────────────────────────────────────────────
+function changePax(type, delta) {
+  var min = type === 'adult' ? 1 : 0;
+  pax[type] = Math.max(min, pax[type] + delta);
+  document.getElementById(type + '-count').textContent = pax[type];
+  updateAgeInputs(type);
+}
 
-  if (cities.length === 0) {
-    container.innerHTML = '<div class="card"><p style="color:var(--mid);font-size:14px;">Tidak ada kota yang terdeteksi. Silakan isi nama hotel secara manual di kolom catatan.</p></div>';
+function updateAgeInputs(type) {
+  var count = pax[type];
+  var container = document.getElementById(type + '-ages');
+  var grid = document.getElementById(type + '-age-grid');
+
+  if (count === 0) {
+    container.classList.remove('visible');
     return;
   }
 
-  cities.forEach((city, idx) => {
-    const div = document.createElement('div');
+  container.classList.add('visible');
+  grid.innerHTML = '';
+  for (var i = 1; i <= count; i++) {
+    var wrap = document.createElement('div');
+    wrap.className = 'age-input-wrap';
+    wrap.innerHTML = '<label class="field-label">' + (type === 'senior' ? 'Senior' : 'Anak') + ' ' + i + '</label>'
+      + '<input type="number" id="' + type + '-age-' + i + '" placeholder="Usia" min="0" max="' + (type === 'senior' ? '120' : '17') + '">';
+    grid.appendChild(wrap);
+  }
+}
+
+// ─── FLIGHT NUMBER FORMAT ──────────────────────────────────────
+function formatFlightNumber(input) {
+  var val = input.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+  input.value = val;
+  var errorId = input.id === 'field-arrival-flight' ? 'arrival-flight-error' : 'departure-flight-error';
+  var isValid = /^[A-Z]{2}\d+$/.test(val) || val === '';
+  document.getElementById(errorId).classList.toggle('visible', !isValid && val !== '');
+  input.classList.toggle('error-field', !isValid && val !== '');
+}
+
+// ─── WHATSAPP FORMAT ──────────────────────────────────────────
+function formatWhatsapp(input) {
+  var val = input.value.replace(/[^\d+\-\s]/g, '');
+  input.value = val;
+}
+
+// ─── DATE VALIDATION ──────────────────────────────────────────
+function validateDates() {
+  var arrivalVal = document.getElementById('field-arrival-date').value;
+  var departureVal = document.getElementById('field-departure-date').value;
+
+  if (arrivalVal && departureVal) {
+    var arrival = new Date(arrivalVal);
+    var departure = new Date(departureVal);
+    var err = document.getElementById('departure-date-error');
+    var depInput = document.getElementById('field-departure-date');
+
+    if (departure <= arrival) {
+      err.classList.add('visible');
+      depInput.classList.add('error-field');
+      // Update departure min to day after arrival
+      var nextDay = new Date(arrival);
+      nextDay.setDate(nextDay.getDate() + 1);
+      depInput.min = nextDay.toISOString().split('T')[0];
+    } else {
+      err.classList.remove('visible');
+      depInput.classList.remove('error-field');
+    }
+  }
+}
+
+// ─── DESTINATION TIERS ────────────────────────────────────────
+function setTier(btn) {
+  var row = btn.closest('.dest-row');
+  var allBtns = row.querySelectorAll('.tier-btn');
+  allBtns.forEach(function(b) {
+    b.classList.remove('selected-must', 'selected-nice', 'selected-no');
+  });
+  var tier = btn.dataset.tier;
+  if (tier === 'must') btn.classList.add('selected-must');
+  else if (tier === 'nice') btn.classList.add('selected-nice');
+  else btn.classList.add('selected-no');
+}
+
+function getDestPrefs() {
+  var results = [];
+  document.querySelectorAll('.dest-row').forEach(function(row) {
+    var cat = row.dataset.cat;
+    var selected = row.querySelector('.tier-btn.selected-must, .tier-btn.selected-nice, .tier-btn.selected-no');
+    if (selected) {
+      var tier = selected.dataset.tier === 'must' ? 'Wajib' : selected.dataset.tier === 'nice' ? 'Oke' : 'Skip';
+      results.push(cat + ': ' + tier);
+    }
+  });
+  return results.join(', ') || 'Tidak diisi';
+}
+
+// ─── HOTEL SECTIONS ───────────────────────────────────────────
+function buildHotelSections() {
+  var container = document.getElementById('city-hotels-container');
+  container.innerHTML = '';
+
+  if (cities.length === 0) {
+    container.innerHTML = '<div class="card"><p style="color:var(--mid);font-size:14px;">Tidak ada kota yang terdeteksi. Silakan isi nama hotel di kolom catatan tambahan.</p></div>';
+    return;
+  }
+
+  cities.forEach(function(city, idx) {
+    var div = document.createElement('div');
     div.className = 'city-hotel-card';
-    div.id = `city-card-${idx}`;
-    div.innerHTML = `
-      <div class="city-hotel-header">
-        <div class="city-hotel-name">
-          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          ${city}
-        </div>
-      </div>
-      <div class="city-hotel-body">
-        <div id="hotels-${idx}">
-          ${hotelEntryHTML(idx, 0)}
-        </div>
-        <button class="add-hotel-btn" onclick="addHotelEntry(${idx})">
-          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
-          Tambah hotel lain di ${city} (pindah hotel)
-        </button>
-      </div>
-    `;
+    div.id = 'city-card-' + idx;
+    div.innerHTML =
+      '<div class="city-hotel-header"><div class="city-hotel-name">'
+      + '<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>'
+      + city + '</div></div>'
+      + '<div class="city-hotel-body">'
+      + '<div id="hotels-' + idx + '">' + hotelEntryHTML(idx, 0) + '</div>'
+      + '<button class="add-hotel-btn" onclick="addHotelEntry(' + idx + ')">'
+      + '<svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>'
+      + 'Tambah hotel lain di ' + city + ' (pindah hotel)</button>'
+      + '</div>';
     container.appendChild(div);
   });
 }
 
 function hotelEntryHTML(cityIdx, entryIdx) {
-  return `
-    <div class="hotel-entry" id="hotel-entry-${cityIdx}-${entryIdx}">
-      ${entryIdx > 0 ? `<button class="remove-hotel" onclick="removeHotelEntry(${cityIdx}, ${entryIdx})">×</button>` : ''}
-      <div class="hotel-entry-num">${entryIdx === 0 ? 'Hotel Utama' : 'Hotel ' + (entryIdx + 1)}</div>
-      <label class="field-label required">Nama Hotel</label>
-      <input type="text" id="hotel-name-${cityIdx}-${entryIdx}" placeholder="e.g. Atour Hotel Wangfujing">
-      <div class="two-col" style="margin-top:12px;">
-        <div>
-          <label class="field-label required">Check-in</label>
-          <input type="date" id="hotel-checkin-${cityIdx}-${entryIdx}">
-        </div>
-        <div>
-          <label class="field-label required">Check-out</label>
-          <input type="date" id="hotel-checkout-${cityIdx}-${entryIdx}">
-        </div>
-      </div>
-    </div>
-  `;
+  var tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  var minDate = tomorrow.toISOString().split('T')[0];
+
+  return '<div class="hotel-entry" id="hotel-entry-' + cityIdx + '-' + entryIdx + '">'
+    + (entryIdx > 0 ? '<button class="remove-hotel" onclick="removeHotelEntry(' + cityIdx + ',' + entryIdx + ')">×</button>' : '')
+    + '<div class="hotel-entry-num">' + (entryIdx === 0 ? 'Hotel Utama' : 'Hotel ' + (entryIdx + 1)) + '</div>'
+    + '<label class="field-label required">Nama Hotel</label>'
+    + '<input type="text" id="hotel-name-' + cityIdx + '-' + entryIdx + '" placeholder="e.g. Atour Hotel Wangfujing">'
+    + '<div class="two-col" style="margin-top:12px;">'
+    + '<div><label class="field-label required">Check-in</label><input type="date" id="hotel-checkin-' + cityIdx + '-' + entryIdx + '" min="' + minDate + '" onchange="validateHotelDates(' + cityIdx + ',' + entryIdx + ')"></div>'
+    + '<div><label class="field-label required">Check-out</label><input type="date" id="hotel-checkout-' + cityIdx + '-' + entryIdx + '" min="' + minDate + '" onchange="validateHotelDates(' + cityIdx + ',' + entryIdx + ')"></div>'
+    + '</div>'
+    + '<div class="field-error" id="hotel-date-error-' + cityIdx + '-' + entryIdx + '">Check-out harus setelah check-in</div>'
+    + '</div>';
 }
 
-const hotelCounts = {};
+var hotelCounts = {};
 
 function addHotelEntry(cityIdx) {
   hotelCounts[cityIdx] = (hotelCounts[cityIdx] || 1) + 1;
-  const entryIdx = hotelCounts[cityIdx] - 1;
-  const container = document.getElementById(`hotels-${cityIdx}`);
-  const div = document.createElement('div');
-  div.innerHTML = hotelEntryHTML(cityIdx, entryIdx);
-  container.appendChild(div.firstElementChild);
+  var entryIdx = hotelCounts[cityIdx] - 1;
+  var container = document.getElementById('hotels-' + cityIdx);
+  var tmp = document.createElement('div');
+  tmp.innerHTML = hotelEntryHTML(cityIdx, entryIdx);
+  container.appendChild(tmp.firstElementChild);
 }
 
 function removeHotelEntry(cityIdx, entryIdx) {
-  const el = document.getElementById(`hotel-entry-${cityIdx}-${entryIdx}`);
+  var el = document.getElementById('hotel-entry-' + cityIdx + '-' + entryIdx);
   if (el) el.remove();
 }
 
-// ─── RANK DROPDOWNS ───────────────────────────────────────────────────────────
-function initDragRank() {
-  // populate all dropdowns with options 1-8
-  populateRankDropdowns();
+function validateHotelDates(cityIdx, entryIdx) {
+  var checkin = document.getElementById('hotel-checkin-' + cityIdx + '-' + entryIdx);
+  var checkout = document.getElementById('hotel-checkout-' + cityIdx + '-' + entryIdx);
+  var err = document.getElementById('hotel-date-error-' + cityIdx + '-' + entryIdx);
+
+  if (checkin && checkin.value) {
+    var nextDay = new Date(checkin.value);
+    nextDay.setDate(nextDay.getDate() + 1);
+    checkout.min = nextDay.toISOString().split('T')[0];
+  }
+
+  if (checkin && checkout && checkin.value && checkout.value) {
+    var invalid = new Date(checkout.value) <= new Date(checkin.value);
+    err.classList.toggle('visible', invalid);
+    checkout.classList.toggle('error-field', invalid);
+  }
 }
 
-function populateRankDropdowns() {
-  const selects = document.querySelectorAll('.rank-select');
-  const total = selects.length;
-  selects.forEach(function(sel) {
-    const currentVal = sel.value;
-    sel.innerHTML = '<option value="">—</option>';
-    for (var i = 1; i <= total; i++) {
-      sel.innerHTML += '<option value="' + i + '">' + i + '</option>';
+function collectHotels() {
+  var result = [];
+  cities.forEach(function(city, idx) {
+    var entries = [];
+    var entryIdx = 0;
+    while (true) {
+      var nameEl = document.getElementById('hotel-name-' + idx + '-' + entryIdx);
+      if (!nameEl) break;
+      entries.push({
+        hotel: nameEl.value.trim(),
+        checkin: document.getElementById('hotel-checkin-' + idx + '-' + entryIdx).value || '',
+        checkout: document.getElementById('hotel-checkout-' + idx + '-' + entryIdx).value || ''
+      });
+      entryIdx++;
     }
-    if (currentVal) sel.value = currentVal;
+    result.push({ city: city, hotels: entries });
   });
+  return result;
 }
 
-function onRankChange(changedSel) {
-  const val = changedSel.value;
-  if (!val) return;
+// ─── FOOD PREFS ───────────────────────────────────────────────
+function getFoodPrefs() {
+  return ['food-halal','food-street','food-veg','food-michelin','food-nospicy']
+    .filter(function(id) { return document.getElementById(id).checked; })
+    .map(function(id) { return document.getElementById(id).value; })
+    .join(', ') || 'No restrictions';
+}
 
-  // Remove this number from all OTHER selects that have it selected
-  document.querySelectorAll('.rank-select').forEach(function(sel) {
-    if (sel !== changedSel && sel.value === val) {
-      sel.value = '';
+// ─── PAX SUMMARY ──────────────────────────────────────────────
+function getPaxSummary() {
+  var parts = [];
+  if (pax.adult > 0) parts.push(pax.adult + ' dewasa');
+  if (pax.senior > 0) {
+    var ages = [];
+    for (var i = 1; i <= pax.senior; i++) {
+      var el = document.getElementById('senior-age-' + i);
+      if (el && el.value) ages.push(el.value);
     }
-  });
-}
-
-function getRankedPrefs() {
-  const results = {};
-  document.querySelectorAll('.rank-select').forEach(function(sel) {
-    if (sel.value) {
-      results[parseInt(sel.value)] = sel.dataset.cat;
+    parts.push(pax.senior + ' senior' + (ages.length ? ' (' + ages.join(', ') + ')' : ''));
+  }
+  if (pax.child > 0) {
+    var ages = [];
+    for (var i = 1; i <= pax.child; i++) {
+      var el = document.getElementById('child-age-' + i);
+      if (el && el.value) ages.push(el.value);
     }
-  });
-  const sorted = Object.keys(results).sort(function(a,b){ return a-b; });
-  return sorted.map(function(n) { return n + '. ' + results[n]; }).join(', ') || 'Tidak diisi';
+    parts.push(pax.child + ' anak' + (ages.length ? ' (' + ages.join(', ') + ')' : ''));
+  }
+  return parts.join(', ');
 }
 
-// ─── STEPS ────────────────────────────────────────────────────────────────────
-let currentStep = 1;
-const totalSteps = 4;
+// ─── STEPS ────────────────────────────────────────────────────
+var currentStep = 1;
 
-function goToStep(n) {
-  if (n > currentStep) return; // don't skip forward
-  showStep(n);
-}
+function goToStep(n) { if (n < currentStep) showStep(n); }
 
-function nextStep(from) {
-  if (!validateStep(from)) return;
-  showStep(from + 1);
-}
+function nextStep(from) { if (validateStep(from)) showStep(from + 1); }
 
-function prevStep(from) {
-  showStep(from - 1);
-}
+function prevStep(from) { showStep(from - 1); }
 
 function showStep(n) {
-  document.querySelector(`#step-${currentStep}`).classList.remove('active');
-  document.querySelector(`.progress-step:nth-child(${currentStep})`).classList.remove('active');
-  document.querySelector(`.progress-step:nth-child(${currentStep})`).classList.add('completed');
-
+  document.querySelector('#step-' + currentStep).classList.remove('active');
   currentStep = n;
-  document.querySelector(`#step-${currentStep}`)?.classList.add('active');
+  var next = document.querySelector('#step-' + currentStep);
+  if (next) next.classList.add('active');
 
-  document.querySelectorAll('.progress-step').forEach((s, i) => {
-    s.classList.remove('active');
+  document.querySelectorAll('.progress-step').forEach(function(s, i) {
+    s.classList.remove('active', 'completed');
     if (i + 1 < currentStep) s.classList.add('completed');
-    else if (i + 1 === currentStep) { s.classList.add('active'); s.classList.remove('completed'); }
-    else s.classList.remove('completed');
+    else if (i + 1 === currentStep) s.classList.add('active');
   });
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ─── VALIDATION ───────────────────────────────────────────────────────────────
-function validateStep(step) {
-  const show = (msg) => {
-    const b = document.getElementById('error-banner');
-    b.textContent = msg;
-    b.style.display = 'block';
-    setTimeout(() => b.style.display = 'none', 4000);
-  };
+// ─── VALIDATION ───────────────────────────────────────────────
+function showError(msg) {
+  var b = document.getElementById('error-banner');
+  b.textContent = msg;
+  b.style.display = 'block';
+  setTimeout(function() { b.style.display = 'none'; }, 5000);
+}
 
+function validateStep(step) {
   if (step === 1) {
-    if (!document.getElementById('field-city-origin').value.trim()) { show('Mohon isi asal kota Anda.'); return false; }
-    if (!document.getElementById('field-whatsapp').value.trim()) { show('Mohon isi nomor WhatsApp Anda.'); return false; }
-    if (!document.getElementById('field-pax').value.trim()) { show('Mohon isi komposisi peserta.'); return false; }
+    if (!document.getElementById('field-city-origin').value.trim()) { showError('Mohon isi asal kota Anda.'); return false; }
+    var wa = document.getElementById('field-whatsapp').value.trim();
+    if (!wa) { showError('Mohon isi nomor WhatsApp Anda.'); return false; }
+    if (!/[\d]{8,}/.test(wa.replace(/[\s\-\+]/g, ''))) { showError('Nomor WhatsApp tidak valid.'); return false; }
   }
   if (step === 2) {
-    if (!document.getElementById('field-arrival-date').value) { show('Mohon isi tanggal kedatangan.'); return false; }
-    if (!document.getElementById('field-arrival-flight').value.trim()) { show('Mohon isi nomor penerbangan kedatangan.'); return false; }
-    if (!document.getElementById('field-departure-date').value) { show('Mohon isi tanggal kepulangan.'); return false; }
-    if (!document.getElementById('field-departure-flight').value.trim()) { show('Mohon isi nomor penerbangan kepulangan.'); return false; }
+    if (!document.getElementById('field-arrival-date').value) { showError('Mohon isi tanggal kedatangan.'); return false; }
+    var af = document.getElementById('field-arrival-flight').value.trim();
+    if (!af) { showError('Mohon isi nomor penerbangan kedatangan.'); return false; }
+    if (!/^[A-Z]{2}\d+$/.test(af)) { showError('Format nomor penerbangan kedatangan tidak valid (e.g. CZ937).'); return false; }
+    if (!document.getElementById('field-departure-date').value) { showError('Mohon isi tanggal kepulangan.'); return false; }
+    var df = document.getElementById('field-departure-flight').value.trim();
+    if (!df) { showError('Mohon isi nomor penerbangan kepulangan.'); return false; }
+    if (!/^[A-Z]{2}\d+$/.test(df)) { showError('Format nomor penerbangan kepulangan tidak valid (e.g. CZ938).'); return false; }
+    var arr = new Date(document.getElementById('field-arrival-date').value);
+    var dep = new Date(document.getElementById('field-departure-date').value);
+    if (dep <= arr) { showError('Tanggal kepulangan harus setelah tanggal kedatangan.'); return false; }
   }
   if (step === 3) {
-    for (let i = 0; i < cities.length; i++) {
-      const nameEl = document.getElementById(`hotel-name-${i}-0`);
-      if (nameEl && !nameEl.value.trim()) {
-        show(`Mohon isi nama hotel di ${cities[i]}.`);
-        return false;
-      }
+    for (var i = 0; i < cities.length; i++) {
+      var nameEl = document.getElementById('hotel-name-' + i + '-0');
+      if (nameEl && !nameEl.value.trim()) { showError('Mohon isi nama hotel di ' + cities[i] + '.'); return false; }
     }
   }
   if (step === 4) {
-    if (!document.getElementById('field-expectations').value.trim()) { show('Mohon ceritakan ekspektasi perjalanan Anda.'); return false; }
+    if (!document.getElementById('field-expectations').value.trim()) { showError('Mohon ceritakan ekspektasi perjalanan Anda.'); return false; }
   }
   return true;
 }
 
-// ─── COLLECT HOTELS ───────────────────────────────────────────────────────────
-function collectHotels() {
-  const result = [];
-  cities.forEach((city, idx) => {
-    const entries = [];
-    let entryIdx = 0;
-    while (true) {
-      const nameEl = document.getElementById(`hotel-name-${idx}-${entryIdx}`);
-      if (!nameEl) break;
-      entries.push({
-        hotel: nameEl.value.trim(),
-        checkin: document.getElementById(`hotel-checkin-${idx}-${entryIdx}`)?.value || '',
-        checkout: document.getElementById(`hotel-checkout-${idx}-${entryIdx}`)?.value || ''
-      });
-      entryIdx++;
-    }
-    result.push({ city, hotels: entries });
-  });
-  return result;
-}
-
-// ─── FOOD PREFS ───────────────────────────────────────────────────────────────
-function getFoodPrefs() {
-  return ['food-halal','food-street','food-veg','food-michelin','food-nospicy']
-    .filter(id => document.getElementById(id)?.checked)
-    .map(id => document.getElementById(id).value)
-    .join(', ') || 'No restrictions';
-}
-
-// ─── SUBMIT ───────────────────────────────────────────────────────────────────
+// ─── SUBMIT ───────────────────────────────────────────────────
 async function submitForm() {
   if (!validateStep(4)) return;
 
-  const btn = document.getElementById('submit-btn');
+  var btn = document.getElementById('submit-btn');
   btn.disabled = true;
   btn.textContent = 'Mengirim...';
 
-  const payload = {
+  var payload = {
     timestamp: new Date().toISOString(),
-    bookingRef,
-    clientName,
+    clientName: clientName,
     cityOrigin: document.getElementById('field-city-origin').value.trim(),
     whatsapp: document.getElementById('field-whatsapp').value.trim(),
     wechat: document.getElementById('field-wechat').value.trim(),
-    pax: document.getElementById('field-pax').value.trim(),
+    pax: getPaxSummary(),
     arrivalDate: document.getElementById('field-arrival-date').value,
     arrivalTime: document.getElementById('field-arrival-time').value,
     arrivalFlight: document.getElementById('field-arrival-flight').value.trim(),
@@ -1198,8 +950,8 @@ async function submitForm() {
     domesticTransport: document.getElementById('field-domestic-transport').value.trim(),
     hotels: collectHotels(),
     expectations: document.getElementById('field-expectations').value.trim(),
-    pace: document.querySelector('input[name="pace"]:checked')?.value || 'Moderate',
-    destPrefs: getRankedPrefs(),
+    pace: document.querySelector('input[name="pace"]:checked').value,
+    destPrefs: getDestPrefs(),
     foodPrefs: getFoodPrefs(),
     mustVisit: document.getElementById('field-must-visit').value.trim(),
     medical: document.getElementById('field-medical').value.trim(),
@@ -1214,8 +966,7 @@ async function submitForm() {
       body: JSON.stringify(payload)
     });
 
-    // Show success (no-cors won't return response, but submission goes through)
-    document.querySelectorAll('.form-section').forEach(s => s.style.display = 'none');
+    document.querySelectorAll('.form-section').forEach(function(s) { s.style.display = 'none'; });
     document.getElementById('success-screen').style.display = 'block';
     document.querySelector('.progress-bar').style.display = 'none';
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1223,9 +974,7 @@ async function submitForm() {
   } catch (err) {
     btn.disabled = false;
     btn.textContent = '✓ Kirim Form';
-    const b = document.getElementById('error-banner');
-    b.textContent = 'Gagal mengirim form. Coba lagi atau hubungi tim kami via WhatsApp.';
-    b.style.display = 'block';
+    showError('Gagal mengirim form. Coba lagi atau hubungi tim kami via WhatsApp.');
   }
 }
 </script>
