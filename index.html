@@ -959,12 +959,14 @@ async function submitForm() {
   };
 
   try {
+   var form = new FormData();
+  form.append('payload', JSON.stringify(payload));
+    
     await fetch(SCRIPT_URL, {
       method: 'POST',
       mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
+      body: form
+    }); 
 
     document.querySelectorAll('.form-section').forEach(function(s) { s.style.display = 'none'; });
     document.getElementById('success-screen').style.display = 'block';
